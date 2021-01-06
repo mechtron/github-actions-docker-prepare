@@ -1,0 +1,16 @@
+name: Docker prep
+description: Prepare for subsequent Docker image build
+inputs:
+  image:
+    description: The Docker image name
+    required: true
+outputs:
+  tags:
+    description: The tag(s) to apply to the Docker image
+  version:
+    description: The version segment of the Docker image tag
+  created:
+    description: Date created string to tack on as an image label
+runs:
+  using: docker
+  image: Dockerfile
